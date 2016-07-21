@@ -1,0 +1,22 @@
+#game {
+  margin-top: 50px;
+
+  .board {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: 10px;
+
+    .info {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
+  .field {
+    margin: 0 auto;
+    background-color: black;
+    border: 1px solid #40a070;
+    position: relative;
+  }
+}

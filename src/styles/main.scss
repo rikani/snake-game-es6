@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  background-color: #2e2e2e;
+  margin: 0;
+  padding: 0;
+
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-weight: normal;
+}
+
+@import "game";
+@import "controls";
+@import "snake";
+@import "food";
