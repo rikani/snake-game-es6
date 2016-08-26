@@ -3,6 +3,7 @@
 import path from 'path';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+import autoprefixer from 'autoprefixer';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 
@@ -28,10 +29,11 @@ gulp.task('webpack', (callback) => {
         },
         {
           test: /\.scss$/,
-          loader: 'style!css!sass?sourceMap'
+          loader: 'style!css!postcss-loader!sass?sourceMap'
         },
       ],
     },
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
       new webpack.optimize.UglifyJsPlugin(),
       new webpack.DefinePlugin({
@@ -96,10 +98,11 @@ gulp.task('webpack-dev-server', (callback) => {
         },
         {
           test: /\.scss$/,
-          loader: 'style!css!sass?sourceMap',
+          loader: 'style!css!postcss-loader!sass?sourceMap',
         },
       ],
     },
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     resolve: {
       extensions: ['', '.js'],
     },
